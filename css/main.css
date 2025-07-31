@@ -1,0 +1,486 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    background: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background: #002147;
+    padding: 0.8rem 0;
+    position: sticky;
+    top: 0;
+    border-bottom: 2px solid #b3a369;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    margin-left: auto;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    right: 7px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    top: 12px;
+    box-shadow: 0 8px 0 white;
+}
+
+.hamburger::after {
+    bottom: 12px;
+}
+
+.hamburger.active::before {
+    transform: rotate(45deg);
+    top: 19px;
+    box-shadow: none;
+}
+
+.hamburger.active::after {
+    transform: rotate(-45deg);
+    bottom: 19px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+nav ul.active {
+    max-height: 1000px;
+    transition: all 0.5s ease;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #b3a369;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.has-submenu:hover .sub-menu {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    background: #002147;
+    min-width: 220px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.sub-menu li {
+    padding: 0;
+}
+
+.sub-menu a {
+    padding: 12px 20px;
+    text-transform: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: block;
+    font-weight: 400;
+}
+
+.sub-menu a:hover {
+    background: rgba(179, 163, 105, 0.1);
+}
+
+.header-container {
+    background: linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.7)),
+    url('../img/main.jpg');
+    background-size: cover;
+    background-position: center 65%;
+    padding: 8rem 15%;
+    text-align: center;
+    flex: 1;
+}
+
+.conference-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    max-width: 1400px;
+    margin: 0 auto;
+    color: #002147;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    line-height: 1.3;
+}
+
+.location-date {
+    background: #b3a369;
+    color: #002147;
+    padding: 1rem 2rem;
+    display: inline-block;
+    margin: 2.5rem auto;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.content-section {
+    padding: 4rem 15%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.section-title {
+    color: #002147;
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    border-bottom: 2px solid #b3a369;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.welcome-message {
+    max-width: 1200px;
+    margin: 2rem auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.highlight-box {
+    background: #f8f9fa;
+    border-left: 4px solid #b3a369;
+    padding: 2rem 1.5rem;
+    margin: 2.5rem 0;
+    border-radius: 4px;
+}
+
+.highlight-box ul {
+    padding-left: 2rem;
+    columns: 2;
+    gap: 2rem;
+}
+
+footer {
+    background: #002147;
+    color: white;
+    padding: 2.5rem 0;
+    border-top: 4px solid #b3a369;
+    margin-top: auto;
+    width: 100%;
+}
+
+.copyright {
+    text-align: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 15%;
+}
+
+.copyright p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.5;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.supporting-orgs {
+    padding: 3rem 5%;
+    margin: 3rem auto;
+    max-width: 1400px;
+}
+
+.org-title {
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #002147;
+}
+
+.orgs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.org-logo {
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+}
+
+.polyu-logo {
+    max-width: 280px;
+}
+
+.org-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    nav ul {
+        gap: 0.5rem;
+        padding: 0 2%;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 0.6rem 0.8rem;
+        letter-spacing: 0.5px;
+    }
+
+    .has-submenu .sub-menu {
+        min-width: 200px;
+    }
+
+    .sub-menu a {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+
+    .header-container {
+        padding: 6rem 8%;
+    }
+
+    .conference-title {
+        font-size: 2.2rem;
+    }
+
+    .location-date {
+        margin: 2rem auto;
+        padding: 1rem 1.8rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content-section {
+        padding: 4rem 5%;
+    }
+
+    .highlight-box ul {
+        columns: 1;
+    }
+
+    .orgs-grid {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    nav ul {
+        flex-wrap: wrap;
+        gap: 0.1rem;
+        padding: 0 2%;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 0.6rem 0.7rem;
+    }
+
+    .header-container {
+        padding: 6rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #002147;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        align-items: center; /* Added for centering */
+    }
+
+    nav ul li {
+        width: 100%; /* Full width for centering content */
+        text-align: center; /* Center text alignment */
+    }
+
+    nav ul.active {
+        display: flex; /* Show menu when active */
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .hamburger {
+        transition: transform 0.3s ease;
+    }
+
+    .hamburger.active {
+        transform: rotate(180deg);
+    }
+
+    .has-submenu .sub-menu {
+        display: none;
+        position: static;
+        background: rgba(0, 33, 71, 0.95);
+        box-shadow: none;
+        animation: none;
+        width: 100%;
+        padding-left: 0; /* Remove indentation */
+    }
+
+    .has-submenu.submenu-active .sub-menu {
+        display: block;
+        padding-left: 1.5rem;
+    }
+
+    nav a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.1rem;
+        justify-content: center; /* Center content horizontally */
+    }
+
+    .sub-menu {
+        width: 100%; /* Ensure full width */
+        padding: 0; /* Remove default padding */
+    }
+
+    .sub-menu a {
+        padding: 0.8rem 1rem !important;
+        text-align: center !important; /* Force center alignment */
+        font-size: 0.95rem;
+        border-bottom: none;
+    }
+
+    .sub-menu li {
+        padding: 0;
+    }
+
+    .sub-menu li:last-child a {
+        border-bottom: none;
+    }
+
+    .conference-title {
+        font-size: 1.8rem;
+    }
+
+    .location-date {
+        margin: 1.5rem auto;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .orgs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .org-logo {
+        max-width: 50%;
+    }
+
+    .polyu-logo {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-container {
+        padding: 4rem 5%;
+    }
+
+    .conference-title {
+        font-size: 1.6rem;
+    }
+
+    .location-date {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
+
+    .org-logo {
+        max-width: 220px;
+    }
+
+    .polyu-logo {
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 400px) {
+    .conference-title {
+        font-size: 1.4rem;
+    }
+
+    .location-date {
+        font-size: 0.8rem;
+    }
+
+    .org-logo {
+        max-width: 200px;
+    }
+
+    .polyu-logo {
+        max-width: 240px;
+    }
+}

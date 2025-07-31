@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GAIE 2024</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Georgia";
+            background-color: #f1f1f1;
+            color: white;
+        }
+        .container {width: 1100px; height: auto; margin: 0 auto 20px auto; padding: 0; background-color: white;}
+        .overlay {
+            top:0:
+            bottom: 0;
+            color: #002147;
+            width: 100%;
+            transition: .5s ease;
+            opacity:1;
+            font-size: 15px;
+            padding: 10px;
+            text-align: right;
+            font-family: "Georgia";
+        }
+        a:link {color: #004265;}
+        a:visited {color: #004265;}
+        a:hover {color: #000080;}
+        a:active {color: #000080;}
+        /* 头部标题 */
+        .header {
+            padding: 5px;
+            color:white;
+            background: black;
+            /*background-image: url('img/main.jpg');*/
+            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.7)),
+            url('img/main.jpg');
+            background-position: center 20%;
+            background-size: 100% 200%;
+            background-repeat: no-repeat;
+
+
+        }
+
+        .header h1 {
+            /*background: rgb(0, 0, 0);*/
+            /*background: rgba(0, 0, 0, 0.5);*/
+            text-align: center;
+            padding: 5px;
+            font-size: 35px;
+            color: #002147;
+            font-family: "Georgia";
+        }
+
+        /* 导航条 */
+        .topnav {
+            overflow: hidden;
+            font-family:"Verdana";
+            background-color: #004265;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            padding: 5px;
+        }
+        /* 导航条链接 */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+
+
+        }
+
+
+        /* 链接颜色修改 */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        /* 创建两列 */
+        /* Left column */
+        .leftcolumn {
+            float: left;
+            width: 65%;
+        }
+
+        /* 右侧栏 */
+        .rightcolumn {
+            float: left;
+            width: 35%;
+            font-family: "Georgia";
+            padding-left: 20px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 60px;
+        }
+        .rightcolumn ul {
+            margin-left: 13px;
+            padding-left: 0;
+        }
+
+        /* 图像部分 */
+        .fakeimg {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* 文章卡片效果 */
+        .card {
+            padding: 20px;
+            color: black;
+            margin-top: 20px;
+            text-align: justify;
+            font-family: "Georgia";
+
+        }
+
+        .card h2{
+            font-size: 18px;
+        }
+
+        /* 列后面清除浮动 */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* 底部 */
+        .footer {
+            padding: 5px;
+            text-align: center;
+            background: #004265;
+            margin-top: 10px;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer h2{
+            text-align: center;
+            color: white;
+            font-size: 15px;
+        }
+
+        /* 响应式布局 - 屏幕尺寸小于 800px 时，两列布局改为上下布局 */
+        @media screen and (max-width: 800px) {
+            .leftcolumn, .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        /* 响应式布局 -屏幕尺寸小于 400px 时，导航等布局改为上下布局 */
+        @media screen and (max-width: 400px) {
+            .topnav a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>The International Workshop on Generative <br>Artificial Intelligence in Education <br>(GAIE 2024)<br><br>
+            <div class="overlay">
+                Collocated with International Conference on Web-Based Learning 2024 (ICWL 2024) &<br>
+                International Symposium on Emerging Technologies for Education 2024 (SETE 2024)
+            </div>
+        </h1>
+    </div>
+
+    <div class="topnav">
+        <a href="index.html">HOME</a>
+        <a href="organization.html">ORGANIZATION</a>
+        <a href="submission.html">SUBMISSION</a>
+        <a href="registration.html">REGISTRATION</a>
+        <a href="attend.html">ATTEND</a>
+        <a href="travel.html">TRAVEL</a>
+        <a href="contact.html" style="float:right">CONTACT</a>
+    </div>
+
+
+    <div class="row" >
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>About GAIE 2024</h2>
+                <p>Generative AI (GAI) technologies, including generative adversarial networks (GANs), generative pre-trained transformer (GPT) and large language models (LLMs), are revolutionizing education by providing learners and educators a more innovative, flexible and personalized education environment to enhance teaching and learning experiences. With the exponential growth of online learning platforms and digital content, educators encounter the challenges of utilizing such extensive education resource and recommending tailored materials to individual learners. Demonstrating effectiveness in natural language generation and creative design, GAI models are garnering significant interest and demand, particularly for assisting in personalized tutoring, content creation, and developing virtual learning environments. The incorporation of GAI technologies enhances education by making it more engaging, accessible, and tailored to the specific needs of individual learners, as well as dismantling language barriers. As such, this workshop aims to group researchers interested in GAI applications across all aspects of technology-enhanced education, facilitating communication among educators, linguistic experts, data specialists and AI researchers. We hope that applying GAI in education can enhance the learning experience, leading towards greater effectiveness, efficiency and personalized in learning. The International Workshop on Generative Artificial Intelligence in Education (GAIE) aims to provide a platform for researchers in exchanging the most recent achievements of theories, datasets, methods, metrics, applications, etc. for the development of the interdisciplinary area.</p>
+                <p>
+                    This workshop is affiliated to the International Symposium on Emerging Technologies for Education 2024 (<a href="http://www.icwl-sete.com/SETE.html"><b>SETE 2024</b></a>), in conjunction with the International Conference on Web-Based Learning 2024 (<a href="http://www.icwl-sete.com/ICWL.html"><b>ICWL 2024</b></a>), to be held in Shanghai, China.
+                </p>
+                <h2>Workshop topics of interest include, but are not limited to, the following:</h2>
+                <ul>
+                    <li>Large Language Models (LLMs) and its Applications in Education </li>
+                    <li>Large Models / Foundation Models for Education</li>
+                    <li>Development and Implementation of Multimodal Models in Education</li>
+                    <li>AI Generated Content (AIGC) for Education</li>
+                    <li>Real-World Impact and Effectiveness of GAI Models in Education</li>
+                    <li>Quality Assessment of Content Generation in Education</li>
+                    <li>Non-Reference/Reference-based Metrics for GAI Models in Education</li>
+                    <li>Language Translation and Natural Language Understanding in Education</li>
+                    <li>Natural Language Processing in Education</li>
+                    <li>Big Data in Technology-Enhanced Education</li>
+                    <li>Content Recommendation for Education Applications</li>
+                    <li>Text Simplification and Summarization for Digital Education Contents</li>
+                    <li>Data Mining on Digital Education Resources</li>
+                    <li>Automatic Question Answering for Assisting Education</li>
+                    <li>Computational Linguistics for Education Data Processing and Evaluation</li>
+                    <li>Interpretation of GAI Model Outputs for Education</li>
+                    <li>Digital Libraries and Corpora for Education</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>Important Date</h2>
+                <!-- <p id="demo" style="font-size: 12px"></p>-->
+                <ul>
+                    <li>Full paper submission: Nov. 5<sup>th</sup>, 2024 </li>
+                    <li>Notification of acceptance: Nov. 25<sup>th</sup>, 2024 </li>
+                    <li>Camera-ready submission: Nov. 30<sup>th</sup>, 2024 </li>
+                    <li>Author registration: Dec. 10<sup>th</sup>, 2024 </li>
+                </ul>
+                <br>
+                <h2>To ICWL & SETE 2024:</h2>
+                <a href="http://www.icwl-sete.com/">http://www.icwl-sete.com/</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Copyright &copy; 2024 GAIE</h2>
+    </div>
+</div>
+</body>
+</html>
